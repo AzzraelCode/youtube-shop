@@ -38,3 +38,19 @@
 - [Канал на YouTube](https://www.youtube.com/channel/UCf6kozNejHoQuFhBDB8cfxA)
 - [Канал в Telegram](https://t.me/azzraelru)
 - [Сайт](https://azzrael.ru)
+
+## По парсингу
+Для парсинга использую простую связку requests + lxml xpath
+- https://docs.python-requests.org/en/master/user/quickstart/#make-a-request
+- https://lxml.de/lxmlhtml.html
+- https://www.guru99.com/xpath-selenium.html
+
+!!! C lxml могут быть сложности с установкой
+Для Win 10 Python 3.8
+pip install lxml-4.6.3-cp38-cp38-win_amd64.whl
+
+Для работы с картинками использую Pillow.
+
+#### Не будет работать если ...  
+Многие, крупные особенно, магазины защищаются от такого парсинга в лоб (блок по куке, блок по ip). 
+С магазинами где фронт на js фреймворках (angular/react/vue) тоже не пройдет
