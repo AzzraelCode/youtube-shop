@@ -54,7 +54,7 @@ class Shop:
         if r.status_code != requests.codes.ok : raise Exception(f"http code == {r.status_code}")
         if not r.content or len(r.content) < 7: raise Exception(f"no content at {url}")
         # инициализирую lxml для парсинга xpath
-        return html.fromstring(r.content.decode('utf-8'))
+        return html.fromstring(r.content.decode(r.encoding))
 
     def xp(self, dom, xpath, throw_exc=False, attr_name='text', index=0, ret_none=None):
         """

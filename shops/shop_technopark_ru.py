@@ -26,7 +26,7 @@ class TechnoparkRu(Shop):
                 'title': el.get("data-product-name"),
                 'price': int(el.get("data-product-price")),
                 'lot_id': int(el.get("data-product-id")),
-                'img': self.xp(dom, "//div[@class='swiper-container']//img[1]", throw_exc=True, attr_name='src'),
+                'img': self.xp(dom, "//div[contains(@class,'swiper-container')]//img[1]", throw_exc=True, attr_name='src'),
                 'description': '',
             }
 
