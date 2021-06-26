@@ -18,7 +18,6 @@ class Shop:
     def __init__(self, shop_name):
         self.shop_name = shop_name
 
-
     def add_error(self, message, print_error=True, ret=None):
         """
         Add error message and ret value on error
