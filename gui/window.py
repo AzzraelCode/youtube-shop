@@ -1,11 +1,11 @@
 import tkinter as tk  # библиотека tkinter
 import tkinter.messagebox  # вывод сообщений
-import urllib
 import webbrowser  # для открытия ссылок в браузере по умолчанию
 from tkinter import ttk  # модуль с более настраиваемыми виджетами
 from urllib.parse import quote_plus
 
 import shops
+from generators import create_image
 
 
 class Window:
@@ -54,10 +54,7 @@ class Window:
         self.els['url'].focus_set()  # при открытии окна фокурсируюсь на этом поле
         self.els['url'].place(x=7, y=30)
 
-        self.els['url'].insert(0,
-                               "https://www.technopark.ru/moyschik-okon-hobot-198/")  # для тестов на dev todo: remove
-
-        ttk.Button(self.w, text="Парсить", width=25, style="TButton", command=self.action_btn_parse).place(x=540, y=29)
+        self.els['url'].insert(0, "https://www.technopark.ru/moyschik-okon-hobot-198/")  # для тестов на dev todo: remove
 
         # поле для ввода заголовка
         tk.Label(text="Текст на видео и обложке", justify=tk.LEFT).place(x=5, y=75)
@@ -77,11 +74,9 @@ class Window:
         self.els['cb_video_tmpl'].place(x=7, y=220)
         self.els['cb_video_tmpl'].current(0)  # шаблон по умолчанию
 
-        ttk.Button(self.w, text="Создать видео", width=25, style="TButton",
-                   command=self.action_btn_create_video()).place(x=540, y=218)
 
         # комбо для выбора шаблона генерации обложки
-        cb_intro_img_values = ['Простая', 'Яркая', 'Без заставки']
+        cb_intro_img_values = ['Океан', 'Лес', 'Темная']
         tk.Label(text="Заставка к видео", justify=tk.LEFT).place(x=5, y=255)
         self.els['cb_intro_img'] = ttk.Combobox(self.w, width=61, style="TCombobox", values=cb_intro_img_values,
                                                 state="readonly")
@@ -103,8 +98,6 @@ class Window:
         self.els['yt_desc'] = tk.Text(self.w, width=50, height=7)
         self.els['yt_desc'].place(x=7, y=460)
 
-        ttk.Button(self.w, text="Подготовить описание", width=25, style="TButton",
-                   command=self.action_btn_create_desc()).place(x=540, y=460)
 
         # поле для ввода заголовка видео
         tk.Label(text="Загрузи видео на YT и добавь ссылку на загруженное (или id видео)", justify=tk.LEFT).place(x=5,
@@ -112,11 +105,14 @@ class Window:
         self.els['yt_video_id'] = ttk.Entry(self.w, width=63, style="TEntry")
         self.els['yt_video_id'].place(x=7, y=640)
 
-        ttk.Button(self.w, text="Обновить описание к видео", width=25, style="TButton",
-                   command=self.action_btn_parse).place(x=540, y=640)
+        # !!! в command передаем методы без скобок, иначе все переданные методы выполнятся в момент запуска приложения
+        ttk.Button(self.w, text="Парсить", width=25, style="TButton", command=self.action_btn_parse).place(x=540, y=29)
+        ttk.Button(self.w, text="Подготовить описание", width=25, style="TButton", command=self.action_btn_create_desc).place(x=540, y=460)
+        ttk.Button(self.w, text="Создать видео", width=25, style="TButton", command=self.action_btn_create_video).place(x=540, y=218)
+        ttk.Button(self.w, text="Обновить описание к видео", width=25, style="TButton", command=self.action_btn_parse).place(x=540, y=640)
 
     def action_btn_create_desc(self):
-        pass
+        create_image(self.els['cb_intro_img'].current(), {'title':self.els['video_text'].get()})
 
     def action_btn_create_video(self):
         pass

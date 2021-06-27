@@ -1,0 +1,22 @@
+.bg{
+    position: fixed;
+    top: 0; left: 0; height: 100%; width: 100%;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% auto;
+    opacity: 0.7;
+    -webkit-filter: blur(10px);
+}
+
+.wrapper{
+    font-size: 3em;
+    color: red;
+    font-family: 'Roboto', sans-serif;
+
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    line-height: 10%;
+}
