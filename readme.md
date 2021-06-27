@@ -86,10 +86,10 @@ pip install lxml-4.6.3-cp38-cp38-win_amd64.whl
 - поле для ввода ссылки (или id) на загруженное на YouTube видео,
 - кнопка для обновления описания к видео
 
-[Tcl](https://tcl.tk/)
-[Доки по Tkinter](https://tkdocs.com/tutorial/widgets.html)
-[Подробный мануал на Английском](https://realpython.com/python-gui-tkinter/)
-[Один из множества туторов по Ткинтеру на русском](https://python-scripts.com/tkinter)
+- [Tcl](https://tcl.tk/)
+- [Доки по Tkinter](https://tkdocs.com/tutorial/widgets.html)
+- [Пдробный мануал на Английском](https://realpython.com/python-gui-tkinter/)
+- [Один из множества туторов по Ткинтеру на русском](https://python-scripts.com/tkinter)
 
 ## Ветка wkhtmltoimage - картинка из текста, фона и эффектов
 
