@@ -72,7 +72,7 @@ pip install lxml-4.6.3-cp38-cp38-win_amd64.whl
 
 Отдельные ветки под разные видео.
 
-##Ветка Tkinter - GUI
+## Ветка Tkinter - GUI
 
 В этой части сделаю GUI под Widows для приложения. Мне нужен интерфейс в котором:
 
@@ -91,7 +91,7 @@ pip install lxml-4.6.3-cp38-cp38-win_amd64.whl
 [Подробный мануал на Английском](https://realpython.com/python-gui-tkinter/)
 [Один из множества туторов по Ткинтеру на русском](https://python-scripts.com/tkinter)
 
-##Ветка wkhtmltoimage - картинка из текста, фона и эффектов
+## Ветка wkhtmltoimage - картинка из текста, фона и эффектов
 
 Я использую [wkhtmltoimage](https://github.com/wkhtmltopdf/wkhtmltopdf) - это рендер html/css на базе Qt Webkit.
 Он умеет рендерить готовую html в pdf или jpeg.
